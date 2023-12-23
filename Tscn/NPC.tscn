@@ -1,0 +1,244 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Players/npc_1.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/NPC.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 3.25, 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "IdleDown"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "IdleLeft"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "IdleRight"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "IdleUp"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "WalkDown"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 3 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "WalkLeft"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 5 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "WalkRight"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "WalkUp"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 4 ]
+}
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 10, 2.5 )
+
+[node name="NPC" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="move_triger" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="body" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+flip_h = true
+hframes = 8
+frame = 3
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2( -9.15925e-07, 1.25 )
+rotation = 1.5708
+shape = SubResource( 11 )
+
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/IdleDown = SubResource( 2 )
+anims/IdleLeft = SubResource( 3 )
+anims/IdleRight = SubResource( 5 )
+anims/IdleUp = SubResource( 4 )
+anims/RESET = SubResource( 6 )
+anims/WalkDown = SubResource( 7 )
+anims/WalkLeft = SubResource( 8 )
+anims/WalkRight = SubResource( 10 )
+anims/WalkUp = SubResource( 9 )
+
+[node name="player_detector" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="collision" type="CollisionShape2D" parent="player_detector"]
+position = Vector2( 0, -4.5 )
+shape = SubResource( 12 )
+
+[connection signal="npc_walk" from="." to="." method="_on_NPC_npc_walk"]
+[connection signal="timeout" from="move_triger" to="." method="_on_move_triger_timeout"]
+[connection signal="area_entered" from="player_detector" to="." method="_on_player_detector_area_entered"]
+[connection signal="area_exited" from="player_detector" to="." method="_on_player_detector_area_exited"]

@@ -1,0 +1,488 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Assets/Players/master_man_wark_1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="Animation" id=7]
+resource_name = "IdleDown"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_triger_head/player_triger_head/CollisionPolygon2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "IdleLeft"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_triger_head/player_triger_head/CollisionPolygon2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_triger_head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -8, -5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("player_body:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "IdleRight"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_triger_head/player_triger_head/CollisionPolygon2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_triger_head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6, -5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("player_body:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "IdleUp"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_triger_head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_triger_head/player_triger_head/CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("player_body:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_triger_head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("player_body:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "WalkDown"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_triger_head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_triger_head/player_triger_head/CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("player_body:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "WalkLeft"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_triger_head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -8, -5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_triger_head/player_triger_head/CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("player_body:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "WalkRight"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_triger_head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6, -5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_triger_head/player_triger_head/CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("player_body:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "WalkUp"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_triger_head/player_triger_head/CollisionPolygon2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_triger_head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -4 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("player_body:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 5 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "IdleLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "IdleDown"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "IdleRight"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "IdleUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=15]
+blend_point_0/node = SubResource( 30 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 31 )
+blend_point_1/pos = Vector2( 0, 1.1 )
+blend_point_2/node = SubResource( 32 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 33 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "WalkLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "WalkDown"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "WalkRight"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "WalkUp"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=26]
+blend_point_0/node = SubResource( 34 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 35 )
+blend_point_1/pos = Vector2( 0, 1.1 )
+blend_point_2/node = SubResource( 36 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 37 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachine" id=16]
+states/Idle/node = SubResource( 15 )
+states/Idle/position = Vector2( 330, 76 )
+states/Walk/node = SubResource( 26 )
+states/Walk/position = Vector2( 587, 75 )
+transitions = [ "Idle", "Walk", SubResource( 27 ), "Walk", "Idle", SubResource( 28 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=17]
+
+[sub_resource type="CircleShape2D" id=29]
+radius = 3.16228
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 4, 2 )
+
+[node name="Player" type="KinematicBody2D"]
+light_mask = 2
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+script = ExtResource( 2 )
+
+[node name="player_body" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 12
+
+[node name="player_collision" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 8 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="animation_player" type="AnimationPlayer" parent="."]
+anims/IdleDown = SubResource( 7 )
+anims/IdleLeft = SubResource( 10 )
+anims/IdleRight = SubResource( 9 )
+anims/IdleUp = SubResource( 8 )
+anims/RESET = SubResource( 3 )
+anims/WalkDown = SubResource( 2 )
+anims/WalkLeft = SubResource( 6 )
+anims/WalkRight = SubResource( 5 )
+anims/WalkUp = SubResource( 4 )
+
+[node name="animation_tree_player" type="AnimationTree" parent="."]
+tree_root = SubResource( 16 )
+anim_player = NodePath("../animation_player")
+active = true
+parameters/playback = SubResource( 17 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Walk/blend_position = Vector2( 0.995976, -0.00714278 )
+
+[node name="player_triger_head" type="Position2D" parent="."]
+position = Vector2( 0, 6 )
+__meta__ = {
+"_gizmo_extents_": 4.0
+}
+
+[node name="player_triger_head" type="Area2D" parent="player_triger_head"]
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="player_triger_head/player_triger_head"]
+shape = SubResource( 29 )
+disabled = true
+
+[node name="player_triger_foot" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="player_triger_foot" type="CollisionShape2D" parent="player_triger_foot"]
+position = Vector2( -2, 8 )
+shape = SubResource( 38 )
