@@ -1,6 +1,6 @@
 extends Camera2D
 
-onready var player = get_node("../Player")
+onready var player = get_node("/root/main/YSort/Player")
 
 func _ready():
 	position = player.position

@@ -1,3 +1,14 @@
 [gd_scene format=2]
 
 [node name="out" type="YSort"]
+
+[node name="surface" type="Sprite" parent="."]
+z_index = 1
+
+[node name="body_collision" type="StaticBody2D" parent="."]
+
+[node name="surface_collision" type="CollisionShape2D" parent="body_collision"]
+
+[node name="door" type="Area2D" parent="."]
+
+[node name="door_collision" type="CollisionShape2D" parent="door"]
