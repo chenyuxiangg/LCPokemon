@@ -24,10 +24,6 @@ config/name="LCPokemon"
 run/main_scene="res://Tscn/main.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-Player="*res://Tscn/Player.tscn"
-
 [display]
 
 window/size/width=320

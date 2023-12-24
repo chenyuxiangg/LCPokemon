@@ -7,6 +7,7 @@ export var ACCELERATION = 50
 
 onready var animation = $animation
 onready var move_triger = $move_triger
+onready var player = get_node("/root/main/YSort/Player")
 
 var move_status_list = ["IdleDown", "WalkDown", "IdleLeft", "WalkLeft", 
 		"IdleUp", "WalkUp", "IdleRight", "WalkRight"]
@@ -55,8 +56,8 @@ func _on_NPC_npc_walk():
 	
 # 确保玩家y坐标小于npc y坐标时，正确处理覆盖关系
 func _on_player_detector_area_entered(_area):
-	z_index = Player.z_index + 1
+	z_index = player.z_index + 1
 
 # 确保玩家y坐标大于npc y坐标时，正确处理覆盖关系
 func _on_player_detector_area_exited(_area):
-	z_index = Player.z_index
+	z_index = player.z_index
