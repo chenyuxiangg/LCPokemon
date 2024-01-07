@@ -5,12 +5,14 @@ onready var background = get_node("/root/main/world")
 onready var house_1_out = get_node("house/house_1/out")
 onready var scence_change = get_node("scence_change/animation")
 onready var player = get_node("/root/main/YSort/Player")
+onready var npcs = get_node("npc")
 
 var house_num = 0
 var current_house_id = 0
 var current_town_name = "真新镇"
 
 signal updated_current_house
+signal player_change_sence_to_outdoor
 
 func set_house_out_visible(house_id, enable):
 	var out = get_node("house/house_{id}/out".format({"id" : house_id}))
@@ -40,8 +42,13 @@ func _on_door_area_entered(_area):
 	yield(scence_change,"animation_finished")
 	
 	set_background_visible(false)
+	
 	for i in range(1, house_num+1):
 		set_house_out_visible(i, false)
+		
+	for npc in npcs.get_children():
+		npc.visible = false
+		
 	set_house_in_visible(current_house_id, true)
 	
 	player.position = Vector2(160, 125)
@@ -55,8 +62,13 @@ func _on_area_area_entered(_area):
 	yield(scence_change,"animation_finished")
 	
 	set_background_visible(true)
+	
 	for i in range(1, house_num+1):
 		set_house_out_visible(i, true)
+		
+	for npc in npcs.get_children():
+		npc.visible = true
+		
 	set_house_in_visible(current_house_id, false)
 	
 	player.position = Vector2(-8, 20) + \
@@ -64,6 +76,7 @@ func _on_area_area_entered(_area):
 		.format({"town_name" : current_town_name, "house_id" : current_house_id})).position
 	scence_change.play_backwards("scence_change")
 	yield(scence_change, "animation_finished")
+	emit_signal("player_change_sence_to_outdoor")
 
 func _on_house_new_house():
 	house_num += 1

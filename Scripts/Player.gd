@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-export var MAX_SPEED = 100
-export var ACCELERATION = 450
+export var MAX_SPEED = 50
+export var ACCELERATION = 200
+export(String) var location = "真新镇"
 
 var velocity = Vector2.ZERO
 

@@ -12,7 +12,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0.0352941, 0.0352941, 0.0352941, 0.2 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -40,6 +40,6 @@ anims/RESET = SubResource( 6 )
 anims/scence_change = SubResource( 7 )
 
 [node name="mask" type="ColorRect" parent="."]
-modulate = Color( 0.0352941, 0.0352941, 0.0352941, 0 )
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 320.0
 margin_bottom = 180.0

@@ -44,7 +44,7 @@ font=false
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
-theme/custom_font="res://Assets/Font/simyou.tres"
+theme/custom_font="res://Assets/Font/simfang.tres"
 
 [importer_defaults]
 
