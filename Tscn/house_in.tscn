@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/outer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Tiles/室内元素_2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Tiles/蒙版.png" type="Texture" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 59.6588, 41.0973, 30.1877, 41.0973, 30.1877, 14.3055, 59.6588, 14.3055 )
+
+[sub_resource type="TileSet" id=1]
+1/name = "室内元素_2.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 221, 51, 8, 8 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "室内元素_2.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 50, 90, 58 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 6 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+
+[node name="in" type="YSort"]
+
+[node name="tiles" type="TileMap" parent="."]
+light_mask = 2
+z_index = 1
+tile_set = SubResource( 1 )
+format = 1
+
+[node name="background" type="Sprite" parent="."]
+light_mask = 2
+
+[node name="outer" type="Node2D" parent="."]
+light_mask = 2
+z_index = 1
+script = ExtResource( 1 )
+
+[node name="area" type="Area2D" parent="outer"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outer/area"]
+
+[node name="face" type="Sprite" parent="outer"]
+
+[node name="space" type="Light2D" parent="."]
+position = Vector2( 160, 90 )
+texture = ExtResource( 3 )
+mode = 3
+range_z_min = 0
+range_z_max = 0
+
+[node name="ColorRect" type="ColorRect" parent="space"]
+margin_left = -160.0
+margin_top = -90.0
+margin_right = 160.0
+margin_bottom = 90.0
+color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
+
+[node name="room_range" type="StaticBody2D" parent="space"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="space/room_range"]
+
+[node name="YSort" type="YSort" parent="."]
+z_index = 1

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tscn/house_in.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tscn/house_out.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/House.gd" type="Script" id=3]
+
+[node name="house" type="YSort"]
+script = ExtResource( 3 )
+
+[node name="in" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="out" parent="." instance=ExtResource( 2 )]
