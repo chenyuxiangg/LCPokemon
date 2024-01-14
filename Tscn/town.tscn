@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Tscn/ScenceChange.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/真新镇.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Tiles/小镇元素.png" type="Texture" id=5]
 
@@ -127,8 +126,6 @@ cell_size = Vector2( 1, 1 )
 collision_layer = 4
 format = 1
 tile_data = PoolIntArray( 6029695, 0, 0, 6094991, 0, 0, 8192240, 1, 0, 8650897, 2, 0, 9830548, 4, 0, 9830556, 4, 0, 9830564, 4, 0, 9830592, 4, 0, 9830600, 4, 0, 9830608, 4, 0, 9830616, 4, 0, 9830624, 4, 0, 9830632, 4, 0, 9830640, 4, 0, 14811373, 3, 0, 15007893, 4, 0, 15007901, 4, 0, 15007909, 4, 0, 15007917, 4, 0, 15007925, 4, 0, 15007933, 4, 0, 15007941, 4, 0, 15007949, 4, 0, 15007957, 4, 0, 15007965, 4, 0, 15007973, 4, 0, 15204495, 0, 0, 15204735, 0, 0 )
-
-[node name="scence_change" parent="." instance=ExtResource( 2 )]
 
 [node name="house" type="YSort" parent="."]
 
