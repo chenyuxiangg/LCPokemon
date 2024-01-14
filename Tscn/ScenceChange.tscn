@@ -40,6 +40,6 @@ anims/RESET = SubResource( 6 )
 anims/scence_change = SubResource( 7 )
 
 [node name="mask" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 0.0352941, 0.0352941, 0.0352941, 0 )
 margin_right = 320.0
 margin_bottom = 180.0
