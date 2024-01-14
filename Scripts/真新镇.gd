@@ -64,24 +64,6 @@ func _on_area_area_entered(_area):
 	if current_house_id == 0:
 		return
 	emit_signal("player_change_sence_to_outdoor")
-#	scence_change.play("scence_change")
-#	yield(scence_change,"animation_finished")
-
-#	set_background_visible(true)
-#
-#	for i in range(1, house_num+1):
-#		set_house_out_visible(i, true)
-#
-#	for npc in npcs.get_children():
-#		npc.visible = true
-#
-#	set_house_in_visible(current_house_id, false)
-#
-#	player.position = Vector2(-8, 20) + \
-#		get_node("/root/main/YSort/{town_name}/house/house_{house_id}/out"\
-#		.format({"town_name" : current_town_name, "house_id" : current_house_id})).position
-#	scence_change.play_backwards("scence_change")
-#	yield(scence_change, "animation_finished")
 
 func _on_house_new_house():
 	house_num += 1
