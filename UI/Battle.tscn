@@ -4,10 +4,6 @@
 
 [node name="background" type="Sprite" parent="."]
 
-[node name="carpet_enemy" type="Sprite" parent="."]
-
-[node name="carpet_master" type="Sprite" parent="."]
-
 [node name="text_area_background" type="Sprite" parent="."]
 
 [node name="text_area" type="Sprite" parent="."]
