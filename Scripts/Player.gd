@@ -5,6 +5,7 @@ export var ACCELERATION = 200
 export(String) var location = "真新镇"
 
 var velocity = Vector2.ZERO
+var en_move = true
 
 onready var animation_tree = $animation_tree_player
 onready var animation_status = animation_tree.get("parameters/playback")
@@ -30,8 +31,17 @@ func announce_move_direction():
 		emit_signal("player_walk_right")
 	else:
 		pass
+		
+func enable_move():
+	en_move = true
+	
+func disable_move():
+	en_move = false
 
 func move(delta):
+	if !en_move:
+		return
+		
 	var input_velocity = Vector2.ZERO
 	input_velocity.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_velocity.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")

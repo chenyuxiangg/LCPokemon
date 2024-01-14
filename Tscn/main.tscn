@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Tscn/Backgrounds/grass_world.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tscn/Player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Assets/battle/batlle_文本框.png" type="Texture" id=18]
 [ext_resource path="res://Assets/battle/battle_roll_grass_2.png" type="Texture" id=19]
 [ext_resource path="res://Assets/battle/battle_roll_grass_1.png" type="Texture" id=20]
+[ext_resource path="res://Scripts/townnote.gd" type="Script" id=21]
 [ext_resource path="res://Scripts/interlude.gd" type="Script" id=22]
 [ext_resource path="res://Assets/UI/纯色_黑色.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Tiles/resource/town_tileset.tres" type="TileSet" id=24]
@@ -52,19 +53,22 @@ func normalize_townnote_pos():
 
 func _on_camera_screen_center_changed():
 	townnote.position = normalize_townnote_pos()
+	
+func enable_input():
+	player.enable_move()
+	
+func disable_input():
+	player.disable_move()
 
 func _on__player_change_sence_to_outdoor():
-	townnote.visible = true
-	townnote.get_node(\"animation\").play(\"fade_in\")
-	yield(townnote.get_node(\"animation\"), \"animation_finished\")
-	
-	# 动画保持1s
-	townnote.get_node(\"timer\").start()
-	yield(townnote.get_node(\"timer\"), \"timeout\")
-	
-	townnote.get_node(\"animation\").play_backwards(\"fade_in\")
-	yield(townnote.get_node(\"animation\"), \"animation_finished\")
-	townnote.visible = false
+	disable_input()
+	interlude.fade_out()
+	yield(interlude, \"finished\")
+	townnote.show()
+	get_node(\"YSort/真新镇\").outer_house()
+	interlude.fade_out(true)
+	yield(interlude, \"finished\")
+	enable_input()
 
 func _on_battle_entered(_area):
 	interlude.fence_in()
@@ -88,6 +92,15 @@ func _on_battle_delay_timeout():
 
 func _on_carpet_in_delay_timeout():
 	battle.show_carpet()
+
+func _on__player_change_sence_to_house():
+	disable_input()
+	interlude.fade_out()
+	yield(interlude, \"finished\")
+	get_node(\"YSort/真新镇\").enter_house()
+	interlude.fade_out(true)
+	yield(interlude, \"finished\")
+	enable_input()
 "
 
 [sub_resource type="Animation" id=25]
@@ -643,6 +656,7 @@ anims/grass_fade_out = SubResource( 21 )
 
 [node name="townnote" parent="." instance=ExtResource( 11 )]
 z_index = 1
+script = ExtResource( 21 )
 
 [node name="world" parent="." instance=ExtResource( 1 )]
 
@@ -797,6 +811,7 @@ z_index = 1
 [connection signal="timeout" from="timer/battle_delay" to="." method="_on_battle_delay_timeout"]
 [connection signal="timeout" from="timer/carpet_in_delay" to="." method="_on_carpet_in_delay_timeout"]
 [connection signal="screen_center_changed" from="camera" to="." method="_on_camera_screen_center_changed"]
+[connection signal="player_change_sence_to_house" from="YSort/真新镇" to="." method="_on__player_change_sence_to_house"]
 [connection signal="player_change_sence_to_outdoor" from="YSort/真新镇" to="." method="_on__player_change_sence_to_outdoor"]
 [connection signal="new_house" from="YSort/真新镇/house/house_1" to="YSort/真新镇" method="_on_house_new_house"]
 [connection signal="player_enter_house" from="YSort/真新镇/house/house_1" to="YSort/真新镇" method="_on_house_player_enter_house"]
