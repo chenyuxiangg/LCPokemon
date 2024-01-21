@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/纯色_黑色.png-5d451e9eec8391fc68e715ce45e94d1d.stex"
+path="res://.import/红色箭头提示.png-e0f01474c233799000af96f206e4683f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/纯色_黑色.png"
-dest_files=[ "res://.import/纯色_黑色.png-5d451e9eec8391fc68e715ce45e94d1d.stex" ]
+source_file="res://Assets/UI/红色箭头提示.png"
+dest_files=[ "res://.import/红色箭头提示.png-e0f01474c233799000af96f206e4683f.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
-flags/filter=true
+flags/repeat=1
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

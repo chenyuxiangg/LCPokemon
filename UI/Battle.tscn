@@ -15,3 +15,7 @@ visible = false
 visible = false
 
 [node name="animation" type="AnimationPlayer" parent="."]
+
+[node name="typing_label" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
